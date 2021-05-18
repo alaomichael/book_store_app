@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
+require('dotenv').config();
 
 // SET UP MONGOOSE
 const mongoose = require('mongoose');
-const connectionString = 'mongodb://localhost:27017/bookapp';
+const connectionString = process.env.MONGODB_URI || process.env.LOCALDB // 'mongodb://localhost:27017/bookapp';
 
 app.use(express.json());
 
